@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WalletController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +20,14 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+Route::get('/wallet', function () {
+    return view('wallet/wallet');
+})->middleware(['auth'])->name('wallet');
+Route::get('/create-wallet', function () {
+   return view('wallet/create-wallet');
+})->middleware(['auth'])->name('create-wallet');
+
+//Route::view('/create-wallet','create-wallet');
+Route::post('/create-wallet',[WalletController::class,'saveWallet']);
 
 require __DIR__.'/auth.php';
