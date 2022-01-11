@@ -14,7 +14,5 @@ class ShowWalletController extends Controller
        $data= DB::table('user_wallets')->get();
        return view('/wallet.wallet',['data'=>$data]);
 
-     //   $wallets= UserWallet::all()->toArray();
-     //  return view('wallet.wallet',compact('wallets'));
     }
 }

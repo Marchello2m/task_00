@@ -9,11 +9,22 @@
 <div class="p-5">
     <div class="mt-2">
         <div class="flex flex-col md:flex-row border-b border-gray-200 pb-4 mb-4">
+            <div class="w-64 font-bold h-6 mx-2 mt-3 text-gray-800"> Owners name</div>
+            <div class="flex-1 flex flex-col md:flex-row">
+                <div class="w-full flex-1 mx-2">
+                    <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
+                        <input placeholder="Owners name name" name="name" class="p-1 px-2 appearance-none outline-none w-full text-gray-800 "> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-2">
+        <div class="flex flex-col md:flex-row border-b border-gray-200 pb-4 mb-4">
             <div class="w-64 font-bold h-6 mx-2 mt-3 text-gray-800"> Wallet name</div>
             <div class="flex-1 flex flex-col md:flex-row">
                 <div class="w-full flex-1 mx-2">
                     <div class="my-2 p-1 bg-white flex border border-gray-200 rounded">
-                        <input placeholder="Wallet name" name="name" class="p-1 px-2 appearance-none outline-none w-full text-gray-800 "> </div>
+                        <input placeholder="Wallet name" name="wallet_name" class="p-1 px-2 appearance-none outline-none w-full text-gray-800 "> </div>
                 </div>
             </div>
         </div>
@@ -44,11 +55,15 @@
         bg-teal-100
         text-teal-700
         border duration-200 ease-in-out
-        border-teal-600 transition">Submit</button>
+        border-teal-600 transition" href="route('create-wallet')" >Submit</button>
             </div>
         </div>
+
     </div>
 
 </div>
     </form>
+
+
 </x-app-layout>
+

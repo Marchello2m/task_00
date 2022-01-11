@@ -14,6 +14,7 @@
             <th class="p-3">User_id</th>
             <th class="p-3 text-left">amount</th>
             <th class="p-3">Name</th>
+            <th class="p-3">Wallet name</th>
             <th class="p-3 text-left">Description</th>
             <th class="p-3">Created_at</th>
 
@@ -27,9 +28,15 @@
             <td class="p-3">{{$item->user_id}}</td>
             <td class="p-3">{{$item->amount}}</td>
             <td class="p-3 font-medium capitalize">{{$item->name}}</td>
+            <td class="p-3 font-medium capitalize">{{$item->wallet_name}}</td>
             <td class="p-3">{{$item->description}}</td>
             <td class="p-3">{{$item->created_at}}</td>
-           <td> <button>Edit</button></td>
+         {{--  <td>  <button onclick="window.location.href='/update/{{ $item->id }}'">edit</button></td> --}}
+
+            <td><a href={{"delete/".$item->id}}>Delete</a></td>
+
+{{--<td><button><a href="{{'delete/'.$item->id}}"></a>Delete</button></td> --}}
+
         </tr>
 
         @endforeach

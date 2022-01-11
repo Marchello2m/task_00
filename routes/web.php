@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UpdateWalletController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WalletController;
@@ -39,7 +40,12 @@ Route::post('/create-wallet',[WalletController::class,'saveWallet']);
 
 Route::get('/wallet',[ShowWalletController::class,'show']);
 
+Route::get('delete/{id}',[WalletController::class,'delete']);
 
+Route::view('form','/wallet.update-wallet');
+Route::post('update',[UpdateWalletController::class,'update']);
+Route::get('form',[UpdateWalletController::class,'showUpdate']);
+//Route::get('form',[ShowWalletController::class,'show']);
 
 
 
