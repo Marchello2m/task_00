@@ -4,29 +4,37 @@
             {{ __('Wallet') }}
         </h2>
     </x-slot>
+@csrf
+    <form action="wallet" method="GET">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    Tipa maks Nosaukums
-                </div>
+    <table class="table text-gray-400 border-separate space-y-6 text-sm">
+        <thead class="bg-blue-500 text-white">
+        <tr>
 
-            </div>
+            <th class="p-3">User_id</th>
+            <th class="p-3 text-left">amount</th>
+            <th class="p-3">Name</th>
+            <th class="p-3 text-left">Description</th>
+            <th class="p-3">Created_at</th>
 
-            Tipa
-        </div>
-    </div>
-    <div >
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    Tipa maks Nosaukums
-                </div>
 
-            </div>
+        </tr>
+        </thead>
 
-            Tipa
-        </div>
-    </div>
+        <tbody>
+        @foreach($data as $item)
+        <tr class="bg-blue-200 lg:text-black">
+            <td class="p-3">{{$item->user_id}}</td>
+            <td class="p-3">{{$item->amount}}</td>
+            <td class="p-3 font-medium capitalize">{{$item->name}}</td>
+            <td class="p-3">{{$item->description}}</td>
+            <td class="p-3">{{$item->created_at}}</td>
+           <td> <button>Edit</button></td>
+        </tr>
+
+        @endforeach
+        </tbody>
+
+    </table>
+    </form>
 </x-app-layout>
